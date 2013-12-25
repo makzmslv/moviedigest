@@ -6,7 +6,8 @@ public class App
     public static void main(String[] args)
     {
         Main main = new Main();
-        main.MovieFunctions();main.SearchFunctions();
+        main.MovieFunctions();
+        main.SearchFunctions();
     }
 
 }
