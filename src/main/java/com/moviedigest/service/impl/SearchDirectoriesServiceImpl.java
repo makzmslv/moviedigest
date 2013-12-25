@@ -6,12 +6,13 @@ import java.util.List;
 
 import com.moviedigest.service.SearchDirectoriesService;
 
-public class SearchDirectoriesServiceImpl implements SearchDirectoriesService {
+public class SearchDirectoriesServiceImpl implements SearchDirectoriesService
+{
 
-	public List<String> getFilenames(String directoryPath) {
-		File directory = new File(directoryPath);
-		List<String> files = Arrays.asList(directory.list());
-		return files;
-	}
+    public List<String> getFilenames(String directoryPath)
+    {
+        File directory = new File(directoryPath);
+        return Arrays.asList(directory.list());
+    }
 
 }

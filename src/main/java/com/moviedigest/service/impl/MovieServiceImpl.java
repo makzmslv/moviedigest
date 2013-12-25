@@ -8,13 +8,15 @@ import com.moviedigest.persistence.entity.Movie;
 import com.moviedigest.service.MovieService;
 
 @Service
-public class MovieServiceImpl implements MovieService {
+public class MovieServiceImpl implements MovieService
+{
 
-	@Autowired
-	private MovieDAO movieDAO;
+    @Autowired
+    private MovieDAO movieDAO;
 
-	public Movie getMovieByName(String movieName) {
-		return movieDAO.findByName(movieName);
-	}
+    public Movie getMovieByName(String movieName)
+    {
+        return movieDAO.findByName(movieName);
+    }
 
 }

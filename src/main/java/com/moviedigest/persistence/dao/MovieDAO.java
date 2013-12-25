@@ -6,7 +6,8 @@ import org.springframework.stereotype.Repository;
 import com.moviedigest.persistence.entity.Movie;
 
 @Repository
-public interface MovieDAO extends JpaRepository<Movie, Integer> {
-	
-	public Movie findByName(String name);
+public interface MovieDAO extends JpaRepository<Movie, Integer>
+{
+
+    public Movie findByName(String name);
 }

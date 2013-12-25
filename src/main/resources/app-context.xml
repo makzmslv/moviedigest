@@ -23,6 +23,7 @@
     <tx:annotation-driven />
 
 	<bean id="movie" class="com.moviedigest.service.impl.MovieServiceImpl"/>
+	<bean id="search" class="com.moviedigest.service.impl.SearchDirectoriesServiceImpl"/>
     <!--           -->
     <!-- DB access -->
     <!--           -->

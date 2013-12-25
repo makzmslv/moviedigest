@@ -7,45 +7,53 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "Movie")
-public class Movie {
-	
-	@Id
-	@Column(name = "Id")
-	private Integer id;
-	
-	@Column(name = "Name")
-	private String name;
-	
-	@Column(name = "Genre")
-	private String genre;
+public class Movie
+{
 
-	public Integer getId() {
-		return id;
-	}
+    @Id
+    @Column(name = "Id")
+    private Integer id;
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
+    @Column(name = "Name")
+    private String name;
 
-	public String getName() {
-		return name;
-	}
+    @Column(name = "Genre")
+    private String genre;
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public Integer getId()
+    {
+        return id;
+    }
 
-	public String getGenre() {
-		return genre;
-	}
+    public void setId(Integer id)
+    {
+        this.id = id;
+    }
 
-	public void setGenre(String genre) {
-		this.genre = genre;
-	}
+    public String getName()
+    {
+        return name;
+    }
 
-	@Override
-	public String toString() {
-		return "Movie [id=" + id + ", name=" + name + ", genre=" + genre + "]";
-	}
+    public void setName(String name)
+    {
+        this.name = name;
+    }
+
+    public String getGenre()
+    {
+        return genre;
+    }
+
+    public void setGenre(String genre)
+    {
+        this.genre = genre;
+    }
+
+    @Override
+    public String toString()
+    {
+        return "Movie [id=" + id + ", name=" + name + ", genre=" + genre + "]";
+    }
 
 }
