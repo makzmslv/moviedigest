@@ -29,7 +29,10 @@ public class SearchDirectoriesServiceImpl implements SearchDirectoriesService
             }
             else
             {
-                fileNames.add(file.getName());
+                if (isAMovie(file))
+                {
+                    fileNames.add(file.getName());
+                }
             }
         }
         return fileNames;
@@ -40,6 +43,20 @@ public class SearchDirectoriesServiceImpl implements SearchDirectoriesService
         if (file.isDirectory())
             return true;
         return false;
+    }
+
+    private boolean isAMovie(File file)
+    {
+        String fileName = file.getName();
+        String extension = getFileExtension(fileName);
+        if (extension.equalsIgnoreCase("mp4"))
+            return true;
+        return false;
+    }
+
+    private String getFileExtension(String fileName)
+    {
+        return fileName.substring(fileName.lastIndexOf(".") + 1, fileName.length());
     }
 
 }
