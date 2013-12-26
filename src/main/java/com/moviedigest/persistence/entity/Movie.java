@@ -3,6 +3,8 @@ package com.moviedigest.persistence.entity;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -11,14 +13,18 @@ public class Movie
 {
 
     @Id
-    @Column(name = "Id")
+    @Column(name = "id")
     private Integer id;
 
-    @Column(name = "Name")
+    @Column(name = "name")
     private String name;
 
-    @Column(name = "Genre")
-    private String genre;
+    @Column(name = "path")
+    private String path;
+
+    @OneToOne
+    @JoinColumn(name = "ref_additionalInfo")
+    private AdditionalInfo additional_Info;
 
     public Integer getId()
     {
@@ -40,20 +46,30 @@ public class Movie
         this.name = name;
     }
 
-    public String getGenre()
+    public String getPath()
     {
-        return genre;
+        return path;
     }
 
-    public void setGenre(String genre)
+    public void setPath(String path)
     {
-        this.genre = genre;
+        this.path = path;
+    }
+
+    public AdditionalInfo getAdditional_Info()
+    {
+        return additional_Info;
+    }
+
+    public void setAdditional_Info(AdditionalInfo additional_Info)
+    {
+        this.additional_Info = additional_Info;
     }
 
     @Override
     public String toString()
     {
-        return "Movie [id=" + id + ", name=" + name + ", genre=" + genre + "]";
+        return "Movie [id=" + id + ", name=" + name + ", path=" + path + ", additional_Info=" + additional_Info + "]";
     }
 
 }

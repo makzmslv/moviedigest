@@ -3,13 +3,17 @@ package com.moviedigest.service.impl;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import com.moviedigest.service.SearchDirectoriesService;
 
 public class SearchDirectoriesServiceImpl implements SearchDirectoriesService
 {
     private List<String> fileNames = new ArrayList<String>();
+
+    private static final Set<String> VideoFormats = new HashSet<String>(Arrays.asList("MP4", "MKV", "AVI", "FLV", "MOV", "WMV", "MPEG"));
 
     public List<String> getFilenames(String directoryPath)
     {
@@ -49,8 +53,9 @@ public class SearchDirectoriesServiceImpl implements SearchDirectoriesService
     {
         String fileName = file.getName();
         String extension = getFileExtension(fileName);
-        if (extension.equalsIgnoreCase("mp4"))
+        if (VideoFormats.contains(extension.toUpperCase()))
             return true;
+
         return false;
     }
 
